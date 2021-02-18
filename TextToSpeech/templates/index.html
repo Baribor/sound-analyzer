@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+      <link rel="stylesheet" href="{{url_for('static', filename='style.css')}}">
+      <title>Sound Analyzer - Text to Speech | Python</title>
+    </head>
+    <body>
+        <div id="speechContainer">
+            <h1>Sound Analyzer with Python</h1>
+            <h2>Upload new file(.wav)</h2>
+            <form method="POST" enctype="multipart/form-data">
+                <input type="file" id="file" name="file">
+                <br>
+                <input type="submit" id="submit" value="Analyze">
+            </form>
+            {% if transcript != "" %}
+            <div id="speechTranscriptContainer">
+                <h1>Transcript</h1>
+                <p>{{transcript}}</p>
+            </div>
+            {% endif %}
+        </div>
+    </body>
+</html>
